@@ -1,0 +1,78 @@
+<!-- MAIN CONTENT -->
+<div class="main-content">
+	<div class="container-fluid">
+		<!-- OVERVIEW -->
+		<div class="panel panel-headline">
+			<div class="panel-heading main-heading">
+				<h3 class="panel-title">Doctor</h3>
+			</div>
+
+			<div class="panel-body">
+
+				<!-- Doctor List -->
+				<div class="row" id="doctorsList" ng-init="vm.getDoctorList()">
+					<div class="row">
+						<div class="panel-heading">
+							<h3 class="panel-title">Doctor List</h3>
+							<a ui-sref="main.addDoctor" class="md-raised md-primary add-btn">Add
+								Doctor</a>
+						</div>
+					</div>
+
+					<div ng-if="vm.isloaded"></div>
+					<div grid-data grid-options="vm.gridOptions"
+						grid-actions="gridActions">
+						<!-- sample table layout goes below, but remember that you can you any mark-up here. -->
+						<table class="table">
+							<thead>
+								<tr>
+									<th sortable="code" class="sortable">Name</th>
+									<th sortable="purchaseOrderNumber" class="sortable">Email</th>
+									<th sortable='total.value' class="sortable">Designation</th>
+									<th sortable='total.value' class="sortable">Department</th>
+									<th sortable='total.value' class="sortable">Specialist</th>
+									<th>Actions</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr grid-item>
+									<td ng-bind="item.firstName+' '+item.lastName "></td>
+									<td ng-bind="item.email"></td>
+									<td ng-bind="item.designation"></td>
+									<td ng-bind="item.department"></td>
+									<td ng-bind="item.specialist" ng-click="vm.toEditDoctor(item)"></td>
+									<td>
+									<a ui-sref="main.editDoctor({id: item.id})">
+									<i class="fa fa-pencil" aria-hidden="true" ></i>
+									</a>
+									<a ng-click="vm.toDeleteDoc(item.id)"><i
+										class="fa fa-trash" aria-hidden="true"  ></i>
+										</a>
+										</td>
+								</tr>
+							</tbody>
+						</table>
+						<div class="float-r"">
+							<grid-pagination max-size="100" boundary-links="true"
+								class="pagination mdl-shadow--2dp"
+								ng-if="paginationOptions.totalItems  > paginationOptions.itemsPerPage"
+								total-items="paginationOptions.totalItems"
+								ng-model="paginationOptions.currentPage"
+								ng-change="reloadGrid()"
+								items-per-page="paginationOptions.itemsPerPage"></grid-pagination>
+						</div>
+					</div>
+				</div>
+				<!-- /Doctor List -->
+			</div>
+		</div>
+		<!-- END OVERVIEW -->
+	</div>
+</div>
+<!-- END MAIN CONTENT -->
+
+
+
+
+
+

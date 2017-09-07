@@ -1,0 +1,29 @@
+{
+	"PAGE_TITLE": "Norse Application",
+	"PAGE_CONTENT": "",
+	"directives.language-select.Language": "Выберите язык",
+	"admin": "админ",
+	"menu": {
+		"dashboard": "панель приборов",
+		"doctors": "врачи",
+		"patients": "пациентов"
+	},
+	"login": {
+		"title": "логин",
+		"userName": "имя пользователя",
+		"password": "пароль",
+		"remember": "Запомни меня",
+		"register.now": "Зарегистрируйтесь сейчас",
+		"input.required": "Это необходимо"
+	},
+	"dashboard": {
+		"title": "панель приборов"
+	},
+	"patients":{
+		"list": "Список пациентов"
+	},
+	"doctors":{
+		"list": "Список врачей"
+	}
+}
+

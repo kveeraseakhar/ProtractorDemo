@@ -1,0 +1,123 @@
+<div class="login-container">
+	<div class="login-box registration-box">
+		<h3 class="page-heading">Register</h3>
+		<form  name="userRegister" role="form">
+		<div layout="row">
+			<md-input-container flex="50"> 
+			<label>First Name</label>
+			<input required name="firstName" ng-model="vm.user.firstName" ng-maxlength="50" ng-pattern="/^[ A-Za-z0-9_\-\&\'\().]*$/">
+	<div ng-messages="userRegister.firstName.$error" >
+				<div ng-message="required">This field is required</div>
+                  <div ng-message="maxlength">Please limit the User name to 50 characters.</div>
+                  <div ng-message="pattern">Only letters, numbers, spaces and special characters _,-,&,',(,),.  are allowed in the
+                     User name.
+                  </div>
+               </div>
+			</md-input-container>
+			<md-input-container flex="50">
+			<label>Last Name</label>
+			<input required name="lastName" ng-model="vm.user.lastName" ng-maxlength="50" ng-pattern="/^[ A-Za-z0-9_\-\&\'\().]*$/">
+		<div ng-messages="userRegister.lastName.$error" >
+		<div ng-message="required">This field is required</div>
+                  <div ng-message="maxlength" class="ng-message event-error">Please limit the User name to 50 characters.</div>
+                  <div ng-message="pattern" class="ng-message event-error">Only letters, numbers, spaces and special characters _,-,&,',(,),.  are allowed in the
+                     User name.
+                  </div>
+               </div>
+			</md-input-container>
+		</div>
+		<div layout="row">
+			<md-input-container flex="50">
+			<label>Email</label>
+			<input type="text" rh-form-email
+                 placeholder="Enter email id"
+                 name="email"
+                 required
+                 ng-model="vm.user.email"
+                 ng-trim>
+
+          <div ng-messages="userRegister.email.$error">
+           <div ng-message="required" class="ng-message">This is required.</div>
+                <div ng-message="email" class="ng-message">Please Enter Valid Email</div>
+          </div>
+			</md-input-container>
+			<md-input-container flex="50"> <label>Phone</label>
+			<input type="phone" required name="phone" ng-model="vm.user.mobileNo">
+			<div ng-messages="projectForm.phone.$error">
+				<div ng-message="required">This is required.</div>
+			</div>
+			</md-input-container>
+		</div>
+		<div layout="row">
+			<md-input-container flex="50">
+			<label>Password</label>
+			 <input name="password"
+                     type="password"
+                     ng-model="vm.user.password"
+                     required
+                     ng-maxlength="40"
+                     ng-pattern="/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#!@$%^&*()+-]).{8,}$/" 
+                     ng-trim>
+
+              <div ng-messages="userRegister.password.$error"  class="hide-if-clean">
+                <div ng-message="required" class="ng-message">This is required.</div>
+                <div ng-message="pattern" class="ng-message">The password should be alphanumeric and should contain at
+                  least 1 upper case, lower case and spl character and must be at least 8 characters.
+                </div>
+                <div ng-message="maxlength" class="ng-message">Please limit the passwords to 40 characters.</div>
+              </div>
+			</md-input-container>
+			<md-input-container flex="50">
+			<label>Confirm Password</label>
+			  <input 
+                     name="cPassword"
+                     type="password"
+                     required
+                     ng-maxlength="40"
+                     equals="{{vm.user.password}}"
+                     ng-model="vm.user.confirmPassword" 
+                      ng-trim>
+
+              <div ng-messages="userRegister.cPassword.$error"  class="hide-if-clean">
+                <div ng-message="required" class="ng-message">This is required.</div>
+                <div ng-message="equals" class="ng-message">Passwords do not match.</div>
+                <div ng-message="maxlength" class="ng-message">Please limit the passwords to 40 characters.</div>
+              </div>
+			</md-input-container>
+		</div>
+		
+		<div layout="row">
+			<md-input-container flex="50">
+			<label>Blood Group</label>
+			<input required name="bloodGroup"
+				ng-model="vm.user.bloodGroup">
+			<div ng-messages="projectForm.bloodGroup.$error">
+				<div ng-message="required">This is required.</div>
+			</div>
+			</md-input-container>
+			<md-input-container flex="50"> <label>Address</label> 
+			<input required name="address" ng-model="vm.user.address">
+			<div ng-messages="projectForm.address.$error">
+				<div ng-message="required">This is required.</div>
+			</div>
+			</md-input-container>
+		</div>
+		
+		<div layout="row">
+			<md-input-container flex="50"> <label>Pin Code</label>
+			<input required name="pinCode"
+				ng-model="vm.user.pinCode">
+			<div ng-messages="projectForm.pinCode.$error">
+				<div ng-message="required">This is required.</div>
+			</div>
+			</md-input-container>
+			
+		</div>
+		
+		
+		<md-button type="submit" ng-disabled="!userRegister.$valid" ng-click="vm.userRegister()" class="md-raised md-primary btn-custom">Save</md-button>
+		</form>
+	</div>
+</div>
+ -
+ 

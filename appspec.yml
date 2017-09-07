@@ -1,0 +1,16 @@
+version: 0.0
+os: linux
+files:
+  - source: target/norse-demo.zip
+    destination: /usr/share/nginx/html/norse-demo/
+hooks:
+  BeforeInstall:
+   - location: scripts/remove_files
+  AfterInstall:
+    - location: scripts/unzip_files
+  ApplicationStop:
+    - location: scripts/stop_server
+  ApplicationStart:
+    - location: scripts/start_server
+
+ 

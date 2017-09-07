@@ -1,0 +1,28 @@
+version: 0.2
+
+
+phases:
+  install:
+    commands:
+      - echo nothing to build
+      - npm install -g bower
+      - npm install -g gulp
+  pre_build:
+    commands:
+      - echo nothing to add
+      - npm install
+      - bower install --allow-root
+  build:
+    commands:
+      - echo Build started on `date`
+      - gulp build
+  post_build:
+    commands:
+      - echo Build completed on `date`
+      - zip -r target/norse-demo.zip dist
+artifacts:
+  files:
+    - target/norse-demo.zip
+    - scripts/**/*
+    - appspec.yml
+  discard-paths: yes

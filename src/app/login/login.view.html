@@ -1,0 +1,40 @@
+
+<div class="login-container">
+	<div class="login-box">
+		<div class="login-user-pic">
+			<img src="../../assets/images/user.png" width="80" />
+		</div>
+		<div ng-translate-language-select></div>
+		<h3>{{"login.title" | translate}}</h3>
+		<form name="form" ng-submit="vm.login()" role="form" name="login">
+		<md-input-container class="md-block"> 
+		<label>{{"login.userName" | translate}}</label>
+		<input required name="userName" ng-model="vm.user.userName">
+		<div ng-messages="projectForm.userName.$error">
+			<div ng-message="required">{{"login.input.required" | translate}}</div>
+		</div>
+		</md-input-container>
+		<md-input-container class="md-block"> 
+		<label>{{"login.password" | translate}}</label>
+		<input type="password" required name="password" ng-model="vm.user.password">
+		<div ng-messages="projectForm.password.$error">
+			<div ng-message="required">{{"login.input.required" | translate}}</div>
+		</div>
+		</md-input-container>
+			<md-checkbox name="remember" ng-model="vm.user.remember" required>{{"login.remember" | translate}}</md-checkbox> 
+		</md-input-container>
+		<div layout="row"><md-button type="submit" class="md-raised md-primary btn-custom">{{"login.title" | translate}}</md-button></div>
+		
+		<div layout="row">
+			<md-input-container flex="50">
+				<a href="#!/register" class="login-links">{{"login.register.now" | translate}}</a>
+			</md-input-container>
+			<!-- 
+			<md-input-container flex="50">
+				<a href="#" class="forgot-links">Forgot Password</a>
+			</md-input-container>
+			 -->
+		</form>
+	</div>
+</div>
+

@@ -1,0 +1,111 @@
+
+<!-- MAIN CONTENT -->
+<div class="main-content">
+	<div class="container-fluid">
+		<!-- OVERVIEW -->
+		<div class="panel panel-headline">
+
+			<div class="panel-heading main-heading">
+				<h3 class="panel-title">Patient</h3>
+			</div>
+			<div class="panel-body">
+				<!-- Add Patient -->
+				<div class="row" id="editPatientForm">
+					<div class="row">
+						<div class="panel-heading">
+							<h3 class="panel-title">Edit Patient</h3>
+						</div>
+					</div>
+					<form name="editPatient" role="form" ng-init="vm.toGetPatientById()">
+						<div layout="row">
+							<md-input-container flex="50"> <label>First
+								Name</label> <input required name="firstName"
+								ng-model="vm.user.firstName">
+							<div ng-messages="editPatient.firstName.$error">
+								<div ng-message="required">This is required.</div>
+							</div>
+							</md-input-container>
+							<md-input-container flex="50"> <label>Last
+								Name</label> <input required name="lastName" ng-model="vm.user.lastName">
+							<div ng-messages="editPatient.lastName.$error">
+								<div ng-message="required">This is required.</div>
+							</div>
+							</md-input-container>
+						</div>
+						<div layout="row">
+							<md-input-container flex="50"> <label>Email</label>
+							<input type="email" required name="email"
+								ng-model="vm.user.email">
+							<div ng-messages="editPatient.email.$error">
+								<div ng-message="required">This is required.</div>
+							</div>
+							</md-input-container>
+							<md-input-container flex="50"> <label>Phone</label>
+							<input type="phone" required name="phone"
+								ng-model="vm.user.mobileNo">
+							<div ng-messages="editPatient.phone.$error">
+								<div ng-message="required">This is required.</div>
+							</div>
+							</md-input-container>
+						</div>
+						<div layout="row">
+							<md-input-container flex="50"> <label>Gender</label>
+							<md-select name="type" ng-model="vm.user.gender" required>
+							<md-option value="male">Male</md-option> <md-option value="female">Female</md-option>
+							</md-select>
+							<div ng-messages="editPatient.gender.$error">
+								<div ng-message="required">This is required.</div>
+							</div>
+							</md-input-container>
+							<md-input-container flex="50"> <label>Join
+								Date</label> <md-datepicker ng-model="vm.user.joinDate"
+								md-max-date="vm.maxDate"></md-datepicker>
+							<div ng-messages="editPatient.joinDate.$error">
+								<div ng-message="required">This is required.</div>
+							</div>
+							</md-input-container>
+						</div>
+						<div layout="row">
+							<md-input-container flex="50"> <label>Blood
+								Group</label> <input required name="bloodGroup"
+								ng-model="vm.user.bloodGroup">
+							<div ng-messages="editPatient.bloodGroup.$error">
+								<div ng-message="required">This is required.</div>
+							</div>
+							</md-input-container>
+							<md-input-container flex="50"> <label>Treatment</label>
+							<input required name="address" ng-model="vm.user.treatment">
+							<div ng-messages="editPatient.treatment.$error">
+								<div ng-message="required">This is required.</div>
+							</div>
+							</md-input-container>
+						</div>
+						<div layout="row">
+							<md-input-container flex="50"> <label>Doctor
+								Name</label> <input required name="doctorName"
+								ng-model="vm.user.doctorName">
+							<div ng-messages="editPatient.doctorName.$error">
+								<div ng-message="required">This is required.</div>
+							</div>
+							</md-input-container>
+							<md-input-container flex="50"> <label>Age</label>
+							<input type="number" required name="age" ng-model="vm.user.age">
+							<div ng-messages="editPatient.age.$error">
+								<div ng-message="required">This is required.</div>
+							</div>
+							</md-input-container>
+						</div>
+
+						<md-button type="submit"
+							ng-click="vm.toUpdatePatient()" ng-disabled="editPatient.$invalid"
+							class="md-raised md-primary btn-custom">Update</md-button>
+					</form>
+				</div>
+				<!-- Add Patient -->
+
+			</div>
+		</div>
+		<!-- END OVERVIEW -->
+	</div>
+</div>
+<!-- END MAIN CONTENT -->

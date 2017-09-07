@@ -1,0 +1,28 @@
+{
+	"PAGE_TITLE": "Norse Application",
+	"PAGE_CONTENT": "",
+	"directives.language-select.Language": "Select Language",
+	"admin": "Admin",
+	"menu": {
+		"dashboard": "Dashboard",
+		"doctors": "Doctors",
+		"patients": "Patients"
+	},
+	"login": {
+		"title": "Login",
+		"userName": "UserName",
+		"password": "Password",
+		"remember": "Remember me",
+		"register.now": "Register Now",
+		"input.required": "This is required"
+	},
+	"dashboard": {
+		"title": "Dashboard"
+	},
+	"patients":{
+		"list": "Patients List"
+	},
+	"doctors":{
+		"list": "Doctors List"
+	}
+}

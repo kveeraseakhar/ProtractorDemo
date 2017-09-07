@@ -1,0 +1,23 @@
+<!-- NAVBAR -->
+<nav class="navbar navbar-default navbar-fixed-top">
+	<div class="brand">
+		<a href="index.html"><img src="../../assets/images/user.png"
+			alt="" height="50" class="img-responsive logo" style="width: 50px"></a>
+	</div>
+	<div class="container-fluid">
+		<div id="navbar-menu">
+			<ul class="nav navbar-nav navbar-right">
+				<li class="dropdown"><a href="" class="dropdown-toggle"
+					data-toggle="dropdown" ng-click="mainCtrl.showUserMenu()"><img
+						src="../../assets/images/user.png" class="img-circle" alt="Avatar">
+						<span>{{"admin" | translate}}</span> <i class="icon-submenu lnr lnr-chevron-down"></i></a>
+					<ul class="dropdown-menu">
+						<li><a href="#"><i class="lnr lnr-user"></i> <span>My
+									Profile</span></a></li>
+						<li><a ng-click="mainCtrl.logout()"><i class="lnr lnr-exit"></i> <span>Logout</span></a></li>
+					</ul></li>
+			</ul>
+		</div>
+	</div>
+</nav>
+<!-- END NAVBAR -->

@@ -1,0 +1,170 @@
+
+<!-- MAIN CONTENT -->
+<div class="main-content">
+	<div class="container-fluid">
+		<!-- OVERVIEW -->
+		<div class="panel panel-headline">
+			<div class="panel-heading main-heading">
+				<h3 class="panel-title">Doctor</h3>
+			</div>
+
+			<div class="panel-body">
+				<!-- Add Doctor -->
+				<div class="row" id="addDoctorForm">
+					<div class="row">
+						<div class="panel-heading">
+							<h3 class="panel-title">Add Doctor</h3>
+						</div>
+					</div>
+					<form name="doctorRegister" role="form">
+
+						<div layout="row">
+							<md-input-container flex="50"> <label>First
+								Name</label> <input required name="firstName"
+								ng-model="vm.user.firstName" ng-maxlength="50"
+								ng-pattern="/^[ A-Za-z0-9_\-\&\'\().]*$/">
+							<div ng-messages="doctorRegister.firstName.$error">
+								<div ng-message="required">This field is required</div>
+								<div ng-message="maxlength">Please limit the User name to
+									50 characters.</div>
+								<div ng-message="pattern">Only letters, numbers, spaces
+									and special characters _,-,&,',(,),. are allowed in the User
+									name.</div>
+							</div>
+							</md-input-container>
+							<md-input-container flex="50"> <label>Last
+								Name</label> <input required name="lastName" ng-model="vm.user.lastName"
+								ng-maxlength="50" ng-pattern="/^[ A-Za-z0-9_\-\&\'\().]*$/">
+							<div ng-messages="doctorRegister.lastName.$error">
+								<div ng-message="required">This field is required</div>
+								<div ng-message="maxlength" class="ng-message event-error">Please
+									limit the User name to 50 characters.</div>
+								<div ng-message="pattern" class="ng-message event-error">Only
+									letters, numbers, spaces and special characters _,-,&,',(,),.
+									are allowed in the User name.</div>
+							</div>
+							</md-input-container>
+						</div>
+
+						<div layout="row">
+							<md-input-container flex="50"> <label>Email</label>
+							<input type="text" rh-form-email placeholder="Enter email id"
+								name="email" required ng-model="vm.user.email" ng-trim>
+
+							<div ng-messages="doctorRegister.email.$error">
+								<div ng-message="required" class="ng-message">This is
+									required.</div>
+								<div ng-message="email" class="ng-message">Please Enter
+									Valid Email</div>
+							</div>
+							</md-input-container>
+							<md-input-container flex="50"> <label>Phone</label>
+							<input type="phone" required name="phone"
+								ng-model="vm.user.mobileNo">
+							<div ng-messages="doctorRegister.phone.$error">
+								<div ng-message="required">This is required.</div>
+							</div>
+							</md-input-container>
+						</div>
+
+						<div layout="row" ng-if="!vm.isEdit">
+							<md-input-container flex="50"> <label>Password</label>
+							<input name="password" type="password"
+								ng-model="vm.user.password" required ng-maxlength="40"
+								ng-pattern="/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#!@$%^&*()+-]).{8,}$/"
+								ng-trim>
+
+							<div ng-messages="doctorRegister.password.$error"
+								class="hide-if-clean">
+								<div ng-message="required" class="ng-message">This is
+									required.</div>
+								<div ng-message="pattern" class="ng-message">The password
+									should be alphanumeric and should contain at least 1 upper
+									case, lower case and spl character and must be at least 8
+									characters.</div>
+								<div ng-message="maxlength" class="ng-message">Please
+									limit the passwords to 40 characters.</div>
+							</div>
+							</md-input-container>
+							<md-input-container flex="50"> <label>Confirm
+								Password</label> <input name="cPassword" type="password" required
+								ng-maxlength="40" equals="{{vm.user.password}}"
+								ng-model="vm.user.confirmPassword" ng-trim>
+							<div ng-messages="doctorRegister.cPassword.$error"
+								class="hide-if-clean">
+								<div ng-message="required" class="ng-message">This is
+									required.</div>
+								<div ng-message="equals" class="ng-message">Passwords do
+									not match.</div>
+								<div ng-message="maxlength" class="ng-message">Please
+									limit the passwords to 40 characters.</div>
+							</div>
+							</md-input-container>
+						</div>
+						<div layout="row">
+							<md-input-container flex="50"> <label>Department</label>
+							<input required name="department" ng-model="vm.user.department">
+							<div ng-messages="doctorRegister.department.$error">
+								<div ng-message="required">This is required.</div>
+							</div>
+							</md-input-container>
+							<md-input-container flex="50"> <label>Designation</label>
+							<input required name="designation" ng-model="vm.user.designation">
+							<div ng-messages="doctorRegister.designation.$error">
+								<div ng-message="required">This is required.</div>
+							</div>
+							</md-input-container>
+						</div>
+						<div layout="row">
+							<md-input-container flex="50"> <label>Gender</label>
+							<md-select name="type" ng-model="vm.user.gender" required>
+							<md-option value="Male">Male</md-option> <md-option
+								value="Female">Female</md-option> </md-select>
+							<div ng-messages="doctorRegister.gender.$error">
+								<div ng-message="required">This is required.</div>
+							</div>
+							</md-input-container>
+							<md-input-container flex="50"> <label>DOB</label>
+							<md-datepicker name="dob" ng-model="vm.user.dob" md-max-date="vm.maxDate"></md-datepicker>
+							<div ng-messages="doctorRegister.dob.$error">
+								<div ng-message="required">This is required.</div>
+							</div>
+							</md-input-container>
+						</div>
+						<div layout="row">
+							<md-input-container flex="50"> <label>Blood
+								Group</label> <input required name="bloodGroup"
+								ng-model="vm.user.bloodGroup">
+							<div ng-messages="doctorRegister.bloodGroup.$error">
+								<div ng-message="required">This is required.</div>
+							</div>
+							</md-input-container>
+							<md-input-container flex="50"> <label>Address</label>
+							<input required name="address" ng-model="vm.user.address">
+							<div ng-messages="doctorRegister.address.$error">
+								<div ng-message="required">This is required.</div>
+							</div>
+							</md-input-container>
+						</div>
+						<div layout="row">
+							<md-input-container flex="50"> <label>Specialist</label>
+							<input required name="specialist" ng-model="vm.user.specialist">
+							<div ng-messages="doctorRegister.specialist.$error">
+								<div ng-message="required">This is required.</div>
+							</div>
+							</md-input-container>
+						</div>
+						<md-button ng-if="!vm.isEdit" type="submit"
+							ng-click="vm.toRegisterDoc()" ng-disabled="doctorRegister.$invalid"
+							class="md-raised md-primary btn-custom">Save</md-button>
+					</form>
+				</div>
+				<!-- /Add Doctor -->
+
+			</div>
+		</div>
+		<!-- END OVERVIEW -->
+	</div>
+</div>
+<!-- END MAIN CONTENT -->
+

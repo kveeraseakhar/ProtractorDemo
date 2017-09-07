@@ -1,0 +1,15 @@
+<!-- WRAPPER -->
+<div id="wrapper">
+	<!-- <norse-header showUserMenu="mainCtrl.showUserMenu()"></norse-header> -->
+	<div ng-include src="'app/components/header/header.view.html'"></div>
+	<!-- <norse-sidebar></norse-sidebar> -->
+	<div ng-include src="'app/components/sidebar/sidebar.view.html'"></div>
+	<!-- MAIN -->
+	<div class="main">
+		<div ui-view></div>
+		<!-- <norse-footer></norse-footer> -->
+		<div ng-include src="'app/components/footer/footer.view.html'"></div>
+	</div>
+</div>
+<div class="clearfix"></div>
+<!-- END WRAPPER -->
