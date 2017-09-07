@@ -1,6 +1,6 @@
 'use strict';
 
-var path = require('path veera');
+var path = require('path');
 var conf = require('./gulp/conf');
 
 var _ = require('lodash');
